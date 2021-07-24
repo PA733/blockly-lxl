@@ -11,7 +11,7 @@
 import Blockly from "blockly";
 
 //设置Blockly语言为中文
-import * as hans from 'blockly/msg/zh-hans'
+import hans from "blockly/msg/zh-hans";
 Blockly.setLocale(hans);
 
 export default {

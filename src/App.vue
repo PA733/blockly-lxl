@@ -2,7 +2,7 @@
   <div id="app">
     <BlocklyComponent id="blockly" :options="options" ref="foo"></BlocklyComponent>
     <p id="code">
-      <button v-on:click="showCode()">Show JavaScript</button>
+      <m-button id="refresh" mode="float" theme="color" v-on:click="showCode()">生成代码！</m-button>
       <pre v-html="code"></pre>
     </p>
   </div>
@@ -512,6 +512,7 @@ body {
   height: 100%;
   margin: 0;
   background-color: beige;
+  --color-primary: 33, 150, 243;
 }
 
 #blockly {
