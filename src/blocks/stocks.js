@@ -68,17 +68,17 @@ Blockly.Blocks['runcmd'] = {
 };
 
 Blockly.Blocks['getruncmdfeedback'] = {
-  init: function () {
+  init: function() {
     this.appendValueInput("cmd")
-      .setCheck("String")
-      .appendField("执行指令：");
+        .setCheck("String")
+        .appendField("执行指令：");
     this.appendDummyInput()
-      .appendField("的")
-      .appendField(new Blockly.FieldDropdown([["命令执行状态", "runcmd"], ["命令执行结果", "runcmdEx"]]), "type");
-    this.setOutput(true, "String");
+        .appendField("的")
+        .appendField(new Blockly.FieldDropdown([["命令执行状态","runcmd"], ["命令执行结果","runcmdEx"]]), "type");
+    this.setOutput(true, ["String", "Boolean"]);
     this.setColour(230);
-    this.setTooltip("");
-    this.setHelpUrl("");
+ this.setTooltip("");
+ this.setHelpUrl("");
   }
 };
 
