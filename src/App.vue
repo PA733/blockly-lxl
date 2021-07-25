@@ -478,6 +478,99 @@ export default {
         </block>
       </value>
     </block>
+    <block type="killplayer">
+      <value name="info">
+        <block type="text">
+          <field name="TEXT">PA733</field>
+        </block>
+      </value>
+    </block>
+    <block type="renameplayer">
+      <value name="info">
+        <block type="text">
+          <field name="TEXT">PA733</field>
+        </block>
+      </value>
+      <value name="newname">
+        <block type="text">
+          <field name="TEXT">PA744</field>
+        </block>
+      </value>
+    </block>
+    <block type="getplayerhanditem">
+      <value name="info">
+        <block type="text">
+          <field name="TEXT">PA733</field>
+        </block>
+      </value>
+    </block>
+    <block type="getplayerallitems">
+      <value name="info">
+        <block type="text">
+          <field name="TEXT">PA733</field>
+        </block>
+      </value>
+    </block>
+    <block type="setplayerpermlevel">
+      <value name="info">
+        <block type="text">
+          <field name="TEXT">PA733</field>
+        </block>
+      </value>
+      <value name="level">
+        <block type="math_number">
+          <field name="NUM">4</field>
+        </block>
+      </value>
+    </block>
+    <block type="setplayergamemode">
+      <value name="info">
+        <block type="text">
+          <field name="TEXT">PA733</field>
+        </block>
+      </value>
+      <value name="mode">
+        <block type="text">
+          <field name="TEXT">创造</field>
+        </block>
+      </value>
+    </block>
+    <block type="addplayerlevel">
+      <value name="info">
+        <block type="text">
+          <field name="TEXT">PA733</field>
+        </block>
+      </value>
+      <value name="count">
+        <block type="math_number">
+          <field name="NUM">114514</field>
+        </block>
+      </value>
+    </block>
+    <block type="transplayertoserver">
+      <value name="info">
+        <block type="text">
+          <field name="TEXT">PA733</field>
+        </block>
+      </value>
+      <value name="server">
+        <block type="text">
+          <field name="TEXT">xiabeize.com</field>
+        </block>
+      </value>
+      <value name="port">
+        <block type="math_number">
+          <field name="NUM">1145</field>
+        </block>
+      </value>
+    </block>
+    <block type="crashplayerclient">
+      <value name="info">
+        <block type="text">
+          <field name="TEXT">PA733</field>
+        </block>
+      </value>
+    </block>
   </category>
 </xml>`,
       },
