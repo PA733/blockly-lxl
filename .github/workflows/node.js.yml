@@ -27,7 +27,7 @@ jobs:
     - run: npm run build --if-present
 
     - name: Upload Actions File
-      uses: actions/upload-artifact@2.2.4
+      uses: actions/upload-artifact@v2.2.4
       with:
         name: bllxl
         path: ./dist
