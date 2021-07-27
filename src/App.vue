@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <BlocklyComponent id="blockly" :options="options" ref="foo"></BlocklyComponent>
+    <BlocklyComponent id="blockly" :options="options" ref="foo" v-on:click="showCode()"></BlocklyComponent>
     <p id="code">
-      <m-button id="refresh" mode="float" theme="color" v-on:click="showCode()">生成代码！</m-button>
+      <m-button id="refresh" mode="float" theme="color" v-on:click="showCode()">刷新代码</m-button>
       <pre v-html="code"></pre>
     </p>
   </div>
