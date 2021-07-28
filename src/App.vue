@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-    <BlocklyComponent id="blockly" :options="options" ref="foo" v-on:click="showCode()"></BlocklyComponent>
+    <BlocklyComponent id="blockly" :options="options" ref="foo" @click="showCode()"></BlocklyComponent>
     <p id="code">
       <pre v-html="code"></pre>
+      <m-button mode="float-icon" size="large" theme="color" style="position:absolute;right:0px;top:0px;" @click="uploadXml()">
+        <m-icon value="file_upload"></m-icon>
+      </m-button>
+      <input ref="filElem" type="file" class="upload-file" style="display: none" @change="getFile">
     </p>
   </div>
 </template>
@@ -578,6 +582,9 @@ export default {
   methods: {
     showCode() {
       this.code = BlocklyJS.workspaceToCode(this.$refs["foo"].workspace);
+      },
+    uploadXml(){
+      this.$refs.filElem.dispatchEvent(new MouseEvent('click'));
     },
   },
 };
