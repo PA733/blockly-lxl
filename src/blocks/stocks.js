@@ -491,7 +491,7 @@ Blockly.JavaScript['regcmd'] = function (block) {
   var statements_callback = Blockly.JavaScript.statementToCode(block, 'callback');
   var code;
   if (dropdown_object != 'op') {
-    code = 'mc.reg' + dropdown_object + 'Cmd' + '(' + value_cmd + ',' + value_cmd.replace(/'/g, '') + '_description' + ',' + 'function(args){\n' + statements_callback + '});\n';
+    code = 'mc.reg' + dropdown_object + 'Cmd' + '(' + value_cmd + ',' + 'function(){if(typeof ' + value_cmd.replace(/'/g, '') + '_description' + ' == "undefined"){ return "未定义描述" ;}else{return ' + value_cmd.replace(/'/g, '') + '_description;}}()' + ',' + 'function(args){\n' + statements_callback + '});\n';
   }
   else {
     code = 'mc.regPlayerCmd' + '(' + value_cmd + ',' + value_cmd.replace(/'/g, '') + '_description' + ',' + 'function(args){\n' + statements_callback + '}' + ',1' + ');\n';
@@ -596,7 +596,7 @@ Blockly.JavaScript['setplayerpermlevel'] = function (block) {
 Blockly.JavaScript['setplayergamemode'] = function (block) {
   var value_info = Blockly.JavaScript.valueToCode(block, 'info', Blockly.JavaScript.ORDER_ATOMIC);
   var value_mode = Blockly.JavaScript.valueToCode(block, 'mode', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = 'mc.getPlayer' + '(' + value_info + ')' + '.' + 'setGameMode' + '(' ;
+  var code = 'mc.getPlayer' + '(' + value_info + ')' + '.' + 'setGameMode' + '(';
   switch (value_mode.replace(/'/g, '')) {
     case '生存':
       code += 0;

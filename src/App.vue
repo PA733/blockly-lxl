@@ -376,16 +376,14 @@ export default {
           <field name="TEXT">打开主菜单</field>
         </block>
       </value>
-      <next>
-        <block type="regcmd">
-          <field name="object">Player</field>
-          <value name="cmd">
-            <block type="text">
-              <field name="TEXT">menu</field>
-            </block>
-          </value>
+    </block>
+    <block type="regcmd">
+      <field name="object">Player</field>
+      <value name="cmd">
+        <block type="text">
+          <field name="TEXT">menu</field>
         </block>
-      </next>
+      </value>
     </block>
     <block type="getruncmdfeedback">
       <field name="type">runcmd</field>
