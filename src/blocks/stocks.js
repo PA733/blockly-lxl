@@ -99,6 +99,17 @@ Blockly.Blocks['regplayercmddescription'] = {
   }
 };
 
+Blockly.Blocks['getcmdrunner'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("命令执行者");
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 Blockly.Blocks['regcmd'] = {
   init: function () {
     this.appendValueInput("cmd")
@@ -490,13 +501,18 @@ Blockly.JavaScript['regcmd'] = function (block) {
   var value_cmd = Blockly.JavaScript.valueToCode(block, 'cmd', Blockly.JavaScript.ORDER_ATOMIC);
   var statements_callback = Blockly.JavaScript.statementToCode(block, 'callback');
   var code;
-  if (dropdown_object != 'op') {
+  if (dropdown_object != 'Console') {
     code = 'mc.reg' + dropdown_object + 'Cmd' + '(' + value_cmd + ',' + 'function(){if(typeof ' + value_cmd.replace(/'/g, '') + '_description' + ' == "undefined"){ return "未定义描述" ;}else{return ' + value_cmd.replace(/'/g, '') + '_description;}}()' + ',' + 'function(args){\n' + statements_callback + '});\n';
   }
   else {
-    code = 'mc.regPlayerCmd' + '(' + value_cmd + ',' + value_cmd.replace(/'/g, '') + '_description' + ',' + 'function(args){\n' + statements_callback + '}' + ',1' + ');\n';
+    code = 'mc.regPlayerCmd' + '(' + value_cmd + ',' + value_cmd.replace(/'/g, '') + '_description' + ',' + 'function(player,args){\n' + statements_callback + '}' + ',1' + ');\n';
   }
   return code;
+};
+
+Blockly.JavaScript['getcmdrunner'] = function() {
+  var code = 'player.xuid';
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['sendcmdoutput'] = function (block) {

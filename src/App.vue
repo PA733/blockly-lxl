@@ -385,6 +385,7 @@ export default {
         </block>
       </value>
     </block>
+    <block type="getcmdrunner"></block>
     <block type="getruncmdfeedback">
       <field name="type">runcmd</field>
       <value name="cmd">
